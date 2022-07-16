@@ -1,0 +1,117 @@
+header>h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    padding: 0;
+    background-color: lightblue;
+}
+
+.menu>li {
+    list-style-type: none;
+    display: block;
+    min-width: 150px;
+    text-align: center;
+    border-left: 1px solid white;
+}
+
+.menu>li:last-child {
+    margin-left: auto;
+}
+
+.menu>li:hover {
+    background-color: darkblue;
+}
+
+.menu>li:hover>a {
+    color: white;
+}
+
+.menu>li>a {
+    display: block;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.submenu {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+}
+
+.submenu>li {
+    border-left: none;
+    border-top: 1px solid white;
+}
+
+.submenu>li:first-child {
+    border-top: none;
+}
+
+.submenu::after {
+    border-width: 10px;
+    content: " ";
+    border-style: solid;
+    border-color: transparent transparent lightblue transparent;
+    position: absolute;
+    bottom: 100%;
+    left: 15%;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+li:hover>.submenu {
+    visibility: visible;
+    animation: appear 1.2s ease;
+}
+
+.item {
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+.item>img {
+    width: 100px;
+    float: left;
+}
+
+.item>img:hover {
+    transform: rotate(-20deg);
+    filter: contrast(200%);
+}
+
+footer {
+    background-color: rgba(0, 0, 255, 0.8);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+}
+
+footer span {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    animation: move 5s linear infinite;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
